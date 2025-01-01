@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>《迷失的城堡》</title>
+	<style> 
+	  body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 70px;
+	  background-color: #5c0303;
+	  color:white;
+    }
+	#story{
+	  font-size:20px;
+	  margin-bottom: 40px;
+	} 
+	.button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+	.button-container button{
+	  margin:5px;
+	  padding:10px 20px;
+	  font-size:20px;
+	  border:none;
+	  border-radius:10px;
+	
+	 }
+	h1{
+	 font-size:40px;
+	}
+	
+	
+	
+	</style>
+</head>
+<body>
+    <h1>迷失的城堡</h1>
+    <div id="story">你是一名冒險者，接到了一個神秘的任務，前往一座被遺忘的古老城堡，尋找傳說中的寶藏。
+	<br>這座城堡充滿了古老的謎語、隱藏的陷阱和失落的秘密。
+	<br>在城堡內，你將會遇到各種各樣的選擇，每一個選擇都可能引領你走向不同的結局</div>
+	<div class="button-container">
+		<button onclick="startGame()">遊戲開始</button>
+	</div>
+	<script>
+	  function startGame() {
+      document.getElementById("story").innerHTML = "你站在城堡的大門前，陰雲密布，雷聲轟隆。城堡的大門沉重而古老，彷彿等待著某個人的到來<br>你覺得有些不安，但也充滿了探索的渴望。";
+      document.querySelector(".button-container").innerHTML = `
+        <button onclick="makeChoice(1)">推開大門，進入城堡</button>
+        <button onclick="makeChoice(2)">仔細觀察城堡周圍，尋找任何線索或隱藏的入口</button>
+      `;
+    }
+	   function makeChoice(choice) {
+			switch (choice) {
+				case 1:
+					document.getElementById("story").innerHTML = "你用力推開了沉重的大門，發現自己置身於一個長長的走廊。<br>走廊的兩邊牆上掛著破舊的畫作，地板上有些地方散發著陳舊的氣味。<br>你聽到遠處傳來微弱的腳步聲，彷彿有某種不明的存在正在靠近。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(3)">跟隨腳步聲，探查源頭</button>
+						<button onclick="makeChoice(4)">繼續走向走廊的盡頭，忽略腳步聲</button>
+						`;
+				break;
+				
+	   case 2:
+          document.getElementById("story").innerHTML = "<h2>傳奇(1)</h2>你選擇停下來仔細觀察城堡的符文，發現它們隱藏著一個古老的秘密。<br>解開符文後，一扇隱秘大門打開，裡面藏有珍貴的文獻和神器。<br>你帶著這些寶藏離開，成為一位傳奇冒險者。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+          `;
+          break;
+		  
+       case 3:
+					document.getElementById("story").innerHTML = "你悄悄地走向聲音的來源，發現自己來到了一扇半開的門前。<br>門後傳來低語聲，似乎有人在談論某件重要的事情。<br>你推開門，發現裡面有兩個陌生人，他們正圍著一個古老的地圖爭論不休。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(5)">上前詢問他們，看看是否能獲得幫助</button>
+						<button onclick="makeChoice(6)">偷偷觀察他們，看看他們是否藏有寶藏的線索</button>
+						`;
+				break;
+				
+	  case 4:
+          document.getElementById("story").innerHTML = "<h2>富有</h2>你走到了走廊的盡頭，發現了一扇密封的古老門。<br>一番尋找後你用鑰匙打開，進入了一間藏滿古代寶藏的密室，成為了富有的探險家。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+          `;
+          break;
+	  
+	  case 5:
+          document.getElementById("story").innerHTML = "<h2>迷失(1)</h2>你上前詢問，卻被他們發現你們擁有同樣的目標。<br>他們是小氣的冒險家，於是迅速將你囚禁在一個黑暗的房間裡，並詛咒你永遠不能離開。<br>最終，你成為了城堡的又一個失落的靈魂。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+          `;
+          break;
+		  
+	  case 6:
+					document.getElementById("story").innerHTML = "你在門外隱蔽的地方觀察了他們一會兒，聽到他們提到了一個名為“黑暗寶盒”的物品，似乎這是他們爭奪的焦點。<br>突然，其中一人轉身，發現了你的蹤影。另一人則抓住了桌上的地圖，準備逃離。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(7)">立刻上前攔住他們，試圖奪回地圖</button>
+						<button onclick="makeChoice(8)">躲藏起來，等待他們離開</button>
+						`;
+				break;
+	
+	  case 7:
+          document.getElementById("story").innerHTML = "<h2>囚牢</h2>你果斷衝上前，但被其中一人迅速制服。<br>他們將你推入一個隱秘的牢房，並取走了地圖。<br>你被困在城堡中，無法逃脫，成為了他們的囚徒。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+	      `;
+          break;
+	
+	  case 8:
+					document.getElementById("story").innerHTML = "你迅速藏在角落裡，目送他們匆匆離開房間。<br>當你走近那張桌子時，發現上面有一個小盒子，裡面竟然有一枚古老的鑰匙，還附帶一張被撕破的地圖。<br>看來，這個鑰匙和這張地圖將是你繼續探索城堡的關鍵。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(9)">拿起鑰匙，繼續探索城堡</button>
+						<button onclick="makeChoice(10)">仔細研究地圖，尋找寶藏的所在</button>
+						`;
+				break;
+				
+	  case 9:
+					document.getElementById("story").innerHTML = "你拿起鑰匙，發現它的形狀非常古怪，與任何現代的鑰匙都不同。<br>你決定繼續深入城堡，尋找這把鑰匙可能開啟的門。<br>走廊的盡頭有一扇銅門，看起來已經很久沒有人開過。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(11)">使用鑰匙打開銅門</button>
+						<button onclick="makeChoice(12)">忽略銅門，繼續在城堡中徘徊</button>
+						`;
+				break;
+				
+	  case 10:
+          document.getElementById("story").innerHTML = "<h2>陷阱</h2>你仔細比對破碎的地圖，發現它指向城堡的地下室。<br>當你抵達時，卻驚覺地下室的入口已被一塊巨石封住。<br>正當你試圖移開石塊時，突然激活了城堡的機關，陷阱啟動，你被困在地下室，無法逃脫。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+	      `;
+          break;
+	
+	  case 11:
+					document.getElementById("story").innerHTML = "你插入鑰匙，銅門發出一聲低沉的響聲，緩緩打開。<br>門後是一個昏暗的房間，中央有一座石像，石像的眼睛像是正在注視著你。<br>你走進房間，突然感覺一股強大的力量在拉扯你，這裡似乎隱藏著某種強大的詛咒。";
+					document.querySelector(".button-container").innerHTML = `
+						<button onclick="makeChoice(13)">檢查石像，看看是否能找到線索</button>
+						<button onclick="makeChoice(14)">迅速離開這個房間，感覺不對勁</button>
+						`;
+				break; 
+	
+	  case 12:
+          document.getElementById("story").innerHTML = "<h2>傳奇(2)</h2>你深入城堡，發現了一本古老的書籍，其中記載著一個秘密通道。<br>。你用這個通道成功逃離城堡，並將寶藏的秘密公之於眾。<br>你成為了名副其實的冒險傳奇。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+	      `;
+          break;
+	
+	  case 13:
+          document.getElementById("story").innerHTML = "<h2>代價</h2>你小心地靠近石像，發現其背後有一個隱藏的按鈕。<br>按下後，一扇秘密通道打開，通向城堡的地下室。<br>地下室裡藏有一個強大的魔法寶盒，它可以實現你的任何願望，但也會讓你陷入永恆的沉睡。<br>你獲得了無上的力量，但也注定永遠無法離開這個城堡。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+	      `;
+          break;
+	  case 14:
+          document.getElementById("story").innerHTML = "<h2>迷失(2)</h2>你迅速撤退，回到了走廊，但發現自己迷失在城堡中。<br>每當你試圖離開，城堡的結構似乎不斷改變，導致你無法找到出口。<br>最終，你永遠被困在這座城堡裡，成為又一個傳說中的失落靈魂。";
+          document.querySelector(".button-container").innerHTML = `
+            <button onclick="startGame()">RETURN TO THE BEGINNING</button>
+	      `;
+          break;
+	
+	 default:
+	      break;
+	}
+   }
+	
+	</script>
+	
+	
+	
+	
+	
+</body>
+</html>
